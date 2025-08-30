@@ -13,7 +13,6 @@ repository = "https://github.com/StrongTheDev/register-app-for-toast"
 [target.'cfg(windows)'.dependencies]
 anyhow = "1.0.99"
 log = "0.4.27"
-uuid = "1.18.0"
 windows = { version = "0.61.3", features = [
     "Win32_Foundation",
     "Win32_System_Com",                   # For COM initialization and property stores
