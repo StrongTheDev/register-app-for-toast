@@ -1,0 +1,25 @@
+[package]
+name = "register_app_for_toast"
+version = "0.1.0"
+edition = "2021"
+description = "A crate that registers your commandline app for toast notifications, but only on Windows."
+readme = "README.md"
+keywords = ["windows", "utility"]
+categories = ["os::windows-apis"]
+authors = ["StrongTheDev <github.com/StrongTheDev>"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/StrongTheDev/register-app-for-toast"
+
+[target.'cfg(windows)'.dependencies]
+anyhow = "1.0.99"
+log = "0.4.27"
+uuid = "1.18.0"
+windows = { version = "0.61.3", features = [
+    "Win32_Foundation",
+    "Win32_System_Com",                   # For COM initialization and property stores
+    "Win32_System_Com_StructuredStorage",
+    "Win32_System_Variant",
+    "Win32_UI_Shell",
+    "Win32_UI_Shell_PropertiesSystem",    # For setting shortcut properties
+] }
+winreg = "0.55.0"
